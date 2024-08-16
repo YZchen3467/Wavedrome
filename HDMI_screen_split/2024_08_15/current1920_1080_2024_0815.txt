@@ -1,0 +1,44 @@
+{
+head: {text: [  'tspan',
+                ['tspan', {fill: '#33a3dc', 'font-weight':'bold'}, 
+                'Different Video_Out data Compare']] },
+
+signal: [
+    {name: 'clk_100 MHz', wave: 'p..............'},
+
+  ['Video_Out SOF',
+    {name: 'axis_tuser',  wave: '0.1..0.........'},
+    {name: 'axis_tdata',  wave: 'x.3..3..3..3..3', 
+        data: ['white', 'red', 'yellow', 'black','p...']},
+    {name: 'axis_tvalid', wave: '0.10.10.10.10.1'},
+    {name: 'axis_tready', wave: 'x1.............'},
+    {name: 'axis_tlast',  wave: 'x0.............'},
+  ],
+
+  {},
+
+  ['Video_Out EOL',
+    {name: 'axis_tuser',  wave: '0..............'},
+    {name: 'axis_tdata',  wave: '3.3..3..3..3...', 
+        data: ['pink', 'green', 'sky', 'gray', 'blue']},
+    {name: 'axis_tvalid', wave: '0.10.10.10.10..'},
+    {name: 'axis_tready', wave: '1..............'},
+    {name: 'axis_tlast',  wave: '0..........1...'}
+  ],
+
+  {},
+
+  ['Video_Out NOL',
+    {name: 'axis_tuser',  wave: '0..............'},
+    {name: 'axis_tdata',  wave: '3.3..3..3..3..3', 
+        data: ['blue', 'white', 'red', 'yellow', 'black', 'p...']},
+    {name: 'axis_tvalid', wave: '0.10.10.10.10.1'},
+    {name: 'axis_tready', wave: '1..............'},
+    {name: 'axis_tlast',  wave: '1.0............'}
+  ]
+],
+foot: {text: [  'tspan',
+                ['tspan', {fill: '#f36c21', 'font-weight':'light'}, 
+                'Vdma setup 1920*1080 Data format']] },
+
+}
