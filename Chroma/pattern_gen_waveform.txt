@@ -1,0 +1,34 @@
+{
+head: {text: [  'tspan',
+                ['tspan', {fill: '#33a3dc', 'font-weight':'bold'}, 
+                'Mother board pattern gen behavior']] },
+
+signal: [
+    ['Pattern_gen',
+        {name: 'clk 312.5MHz', wave: 'p..............'},
+        {name: 'LFSR_data',   wave: 'x.3..3.3...3.33', 
+        data: ['16bit', '16bit', '16bit', '16bit','16bit','1...']},
+        {name: 'axis_m_tkeep',  wave: '2..............',
+        data:['f']},
+        {name: 'axis_m_tvalid', wave: '0.1..01..0.1.0.'},
+        {name: 'axis_m_tready', wave: 'x1.............'},
+        {name: 'axis_m_tlast',  wave: 'x0..........10.'},
+        {name: 'axis_m_tdata',  wave: 'x..4..56....7..',
+        data:['lane1,lane2','32bit','32bit','32bit']}
+    ],
+
+  {},
+
+    ['Core 1 transimit',
+        {name: 'clk 160MHz', wave: 'p..............'},
+        {name: 'fifo_m_tkeep',  wave: '2..............',
+        data:['f']},
+        {name: 'fifo_m_tvalid', wave: '1.0..1...0.1.0.'},
+        {name: 'fifo_m_tready', wave: '1..............'},
+        {name: 'fifo_m_tlast',  wave: '0...........10.'},
+        {name: 'fifo_m_tdata',  wave: '3..333..3.3..3.',
+        data:['lane1,lane2','32bit','32bit','32bit']}
+    ] 
+],
+config: {hscale: 2}
+}
